@@ -6,9 +6,16 @@
 #    By: ztisnes <ztisnes@student.42.us.org>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/05/09 10:53:08 by ztisnes           #+#    #+#              #
-#    Updated: 2018/05/09 11:02:01 by ztisnes          ###   ########.fr        #
+#    Updated: 2018/05/10 16:42:24 by ztisnes          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
+
+#COLORS
+GREEN  := $(shell tput -Txterm setaf 2)
+WHITE  := $(shell tput -Txterm setaf 7)
+YELLOW := $(shell tput -Txterm setaf 3)
+RESET  := $(shell tput -Txterm sgr0)
+############
 
 NAM_CLIENT	= client
 NAM_SERVER	= server
@@ -33,9 +40,10 @@ $(DUMMY): $(OBJ)
 all:$(NAME)
 
 git:
-	echo "ztisnes" >> author
-	git add .
-	git status
+	@rm -rf author
+	@echo "ztisnes" >> author
+	@git add .
+	@git status
 
 debug: $(DUMMY)
 

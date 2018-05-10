@@ -2,6 +2,7 @@
 *.d
 ._*
 .DS_Store*
+.nfs*
 
 # Object files
 *.o
